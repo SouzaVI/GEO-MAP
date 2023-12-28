@@ -9,11 +9,14 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 var marker;
+var circle; 
+
 
 // Função para adicionar ou mover marcador no clique
 function onMapClick(e) {
     var lat = e.latlng.lat;
     var lon = e.latlng.lng;
+	var accuracy = 15;
 
     // Remover o marcador existente se houver
     if (marker) {
@@ -22,10 +25,11 @@ function onMapClick(e) {
 
     // Criar um novo marcador e adicionar ao mapa
     marker = L.marker([lat, lon]).addTo(map);
+	circle = L.circle([lat, lon], {radius: accuracy}).addTo(map);
 
     // Adicionar um PopUp com as coordenadas
     marker.bindPopup("Latitude: " + lat + "<br>Longitude: " + lon).openPopup();
-
+	console.log("Minhas coodernadas - lat: " + lat + "lon: " + lon)
     // Enviar as coordenadas para o servidor 
     fetch('/get_coordinates', {
         method: 'POST',
