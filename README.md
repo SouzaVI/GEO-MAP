@@ -36,7 +36,4 @@ O arquivo `app.py` contém a lógica principal do aplicativo. Aqui estão alguma
 
 - **Rota `/get_coordinates`:** Esta rota é acionada por uma solicitação POST e recebe dados JSON contendo informações de latitude e longitude. A lógica dentro desta rota pode ser personalizada para realizar ações específicas, como armazenar os dados em um banco de dados.
 
-## Contribuições
-Estamos abertos a contribuições e melhorias neste módulo. Se encontrar problemas ou tiver sugestões, sinta-se à vontade para abrir uma issue ou enviar um pull request.
-
 Aproveite explorando o mapa e utilizando as funcionalidades oferecidas por este módulo de mapa interativo!
